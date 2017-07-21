@@ -2,7 +2,9 @@
 Compare multiple tasks and their durations
 
 Reads an input file written by the user, describing a task on each line.
-Lines should be in the format [COURSE TITLE], [TASK NAME], ["from"], [DATE], ["to"], [DATE]
+Lines should be in the format:
+`[COURSE TITLE], [TASK NAME], ["from"], [DATE], ["to"], [DATE]`
+
 Look at input.txt for an example
 
 Write dates in the form DD/MM, with no year.
