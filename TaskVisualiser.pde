@@ -58,12 +58,10 @@ void setup(){
   }
   
   // Draw the vertical dividers
+  fill(0);
   int dayRange = numberOfDaysBetween(minDate, maxDate);
-  print(dayRange);
-  print(maxDate);
   columnWidth = newWidth/dayRange;
   int dayToDraw = minDate.day;
-  fill(0);
   text(monthNames.get(minDate.month), buffer, buffer-30);
   int currentMonth = minDate.month;
   for(int i = 0; i <= dayRange; i++){
