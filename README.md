@@ -5,7 +5,7 @@ Made in/with [Processing](https://processing.org/)
 Compare multiple tasks and their durations
 
 Reads an input file written by the user, describing a task on each line.
-Lines should be in the format:
+Lines should be in the following format(without brackets and commas):
 
 `[COURSE TITLE], [TASK NAME], ["from"], [DATE], ["to"], [DATE]`
 
