@@ -1,4 +1,7 @@
 # TaskVisualiser
+
+Made in/with [Processing](https://processing.org/)
+
 Compare multiple tasks and their durations
 
 Reads an input file written by the user, describing a task on each line.
