@@ -13,7 +13,8 @@ Lines should be in the following format(without brackets and commas):
 Look at input.txt for an example
 
 Write dates in the form DD/MM, with no year.
-If you want to use the current day, type "now"
+
+If you want to use the current day instead of a date, type "now"
 - Useful when tasks are in progress - the visualisation will update daily, to show the task duration getting smaller
 - Only works when the no dates in the input file precede the current day
 
