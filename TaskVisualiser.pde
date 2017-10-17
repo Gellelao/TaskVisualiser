@@ -43,8 +43,6 @@ void setup(){
   // Organize the field
   minDate = sortedDates[0];
   maxDate = sortedDates[sortedDates.length-1];
-  println(maxDate);
-  println(numberOfDaysBetween(minDate, maxDate));
   
   // Draw smaller inner rectangle
   int newWidth = width-(buffer*2);
@@ -59,7 +57,8 @@ void setup(){
   
   // Draw the vertical dividers
   fill(0);
-  int dayRange = numberOfDaysBetween(minDate, maxDate);
+  // Adding 1 here so it is inclusive (i.e the whole day for the last day is shown)
+  int dayRange = numberOfDaysBetween(minDate, maxDate)+1;
   columnWidth = newWidth/dayRange;
   int dayToDraw = minDate.day;
   text(monthNames.get(minDate.month), buffer, buffer-30);
@@ -161,7 +160,8 @@ void drawBars(int level, ArrayList<Task> tasks){
   int i = 0;
   for(Task t : tasks){
     int dayOffset = numberOfDaysBetween(minDate, t.from);
-    int dayLength = numberOfDaysBetween(t.from, t.to);
+    // Adding one to the days to make more sense visually - now includes  the entirety of the second day as well.
+    int dayLength = numberOfDaysBetween(t.from, t.to)+1;
     fill(r, g, b);
     rect(buffer+(dayOffset*columnWidth), baseY+(increment*i), dayLength*columnWidth, increment);
     fill(0);
@@ -214,7 +214,7 @@ void fillMonthMaps(){
   monthNames.put(9, "SEP");
   monthNames.put(10, "OCT");
   monthNames.put(11, "NOV");
-  monthNames.put(12, "JDEC");
+  monthNames.put(12, "DEC");
 }
 
 boolean isLeapYear(int year) {
