@@ -177,7 +177,7 @@ int numberOfDaysBetween(Date start, Date end){
     int daysInBetween = 0;
     int daysFromStartOfLastMonthTillEnd = end.day;
     int i = start.month;
-    while(++i != end.month){
+    while(++i < end.month){
       daysInBetween += monthLengths.get(i);
     }
     return daysTillEndOfFirstMonth + daysInBetween + daysFromStartOfLastMonthTillEnd;
