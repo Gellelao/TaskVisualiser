@@ -16,7 +16,7 @@ Write dates in the form DD/MM, with no year.
 
 If you want to use the current day instead of a date, type "now"
 - Useful when tasks are in progress - the visualisation will update daily, to show the task duration getting smaller
-- Only works when the no dates in the input file precede the current day
+- Only works when no dates in the input file precede the current day
 
 The colours are chosen randomly
 
