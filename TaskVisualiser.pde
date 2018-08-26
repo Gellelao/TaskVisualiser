@@ -20,7 +20,7 @@ HashMap<Integer, String> monthNames;
 void setup(){
   size(1800, 800);
   background(255);
-  strokeWeight(2);
+  strokeWeight(1);
   stroke(0);
   fill(255);
   
@@ -78,7 +78,7 @@ void setup(){
   // Highlight the current day
   int daysBeforeCurrentDay = numberOfDaysBetween(minDate, new Date("now"));
   noFill();
-  strokeWeight(3);
+  strokeWeight(2);
   stroke(255, 255, 0);
   rect(buffer+(daysBeforeCurrentDay*columnWidth)-3, buffer-3, columnWidth+6, newHeight+6);
   stroke(0);
@@ -165,9 +165,20 @@ void drawBars(int level, ArrayList<Task> tasks){
     fill(r, g, b);
     rect(buffer+(dayOffset*columnWidth), baseY+(increment*i), dayLength*columnWidth, increment);
     fill(0);
-    text(t.name, buffer+(dayOffset*columnWidth)+5, baseY+(increment*i)+15);
+    drawTextOutlined(t.name, buffer+(dayOffset*columnWidth)+5, baseY+(increment*i)+20);
     i++;
   }
+}
+
+void drawTextOutlined(String text, int x, int y){
+  textSize(15);
+  fill(255);
+  for(int i = -1; i < 2; i++){
+    text(text, x+i, y);
+    text(text, x, y+i);
+  }
+  fill(0);
+  text(text, x, y);
 }
 
 // Returns the number of days between two dates
@@ -177,7 +188,8 @@ int numberOfDaysBetween(Date start, Date end){
     int daysInBetween = 0;
     int daysFromStartOfLastMonthTillEnd = end.day;
     int i = start.month;
-    while(++i < end.month){
+    while(++i != end.month){
+      println(i);
       daysInBetween += monthLengths.get(i);
     }
     return daysTillEndOfFirstMonth + daysInBetween + daysFromStartOfLastMonthTillEnd;
