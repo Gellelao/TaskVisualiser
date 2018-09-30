@@ -201,17 +201,19 @@ int numberOfDaysBetween(Date start, Date end){
 void fillMonthMaps(){
   monthLengths.put(1, 31);
   // Check for leap year
-  if(isLeapYear(year()))monthLengths.put(2, 29);
-  else monthLengths.put(2, 28);
+  if(isLeapYear(year()))
+      monthLengths.put(2, 29);
+  else 
+      monthLengths.put(2, 28);
   monthLengths.put(3, 31);
   monthLengths.put(4, 30);
   monthLengths.put(5, 31);
-  monthLengths.put(6, 31);
+  monthLengths.put(6, 30);
   monthLengths.put(7, 31);
   monthLengths.put(8, 31);
-  monthLengths.put(9, 31);
+  monthLengths.put(9, 30);
   monthLengths.put(10, 31);
-  monthLengths.put(11, 31);
+  monthLengths.put(11, 30);
   monthLengths.put(12, 31);
   
   monthNames.put(1, "JAN");
